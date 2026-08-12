@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahsan | Search Intelligence Portfolio</title>
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #F8F9FA;
+            --text-color: #1A1D20;
+            --brand-color: #3B82F6;
+            --accent-color: #10B981;
+            --card-bg: #FFFFFF;
+            --border-color: #E5E7EB;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+        }
+
+        header {
+            max-width: 650px;
+            width: 100%;
+            margin: 0 auto 3rem auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-placeholder {
+            width: 48px;
+            height: 48px;
+            background-color: var(--brand-color);
+            color: #FFFFFF;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            border-bottom: 4px solid var(--accent-color);
+        }
+
+        .brand-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        main {
+            max-width: 650px;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        h1 span {
+            color: var(--brand-color);
+        }
+
+        p.claim {
+            font-size: 1.15rem;
+            color: #4B5563;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #E0F2FE;
+            color: #0369A1;
+            padding: 0.35rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            align-self: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--text-color);
+            color: #FFFFFF;
+            padding: 0.85rem 1.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            border: 1px solid var(--text-color);
+            text-align: center;
+            align-self: flex-start;
+        }
+
+        .cta-btn:hover {
+            background-color: transparent;
+            color: var(--text-color);
+        }
+
+        footer {
+            max-width: 650px;
+            width: 100%;
+            margin: 3rem auto 0 auto;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+            font-size: 0.8rem;
+            color: #9CA3AF;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-placeholder">A</div>
+        <div class="brand-name">AHSAN.SEO</div>
+    </header>
+
+    <main>
+        <div class="status-badge">
+            <span class="status-dot"></span>
+            Empty But Live Milestone
+        </div>
+        <h1>Building the Future of <span>Search Intelligence</span>.</h1>
+        <p class="claim">I build evidence-backed, leakage-free ML models that identify declining content and prioritize search optimization opportunities across millions of rows of search performance data.</p>
+        <a href="https://github.com/argentium0/flyrank-ml-internship-starter" class="cta-btn">Explore Repository</a>
+    </main>
+
+    <footer>
+        <div>&copy; 2026 Ahsan</div>
+        <div>Applied Search Intelligence Track</div>
+    </footer>
+</body>
+</html>
