@@ -12,7 +12,8 @@
         :root {
             --bg-color: #F8F9FA;
             --text-color: #1A1D20;
-            --brand-color: #3B82F6;
+            --brand-color: #2563EB;
+            --brand-hover: #1D4ED8;
             --accent-color: #10B981;
             --card-bg: #FFFFFF;
             --border-color: #E5E7EB;
@@ -89,11 +90,14 @@
             color: var(--muted-text);
             font-weight: 500;
             font-size: 0.9rem;
-            transition: color 0.2s;
+            padding-bottom: 0.25rem;
+            transition: all 0.2s;
         }
 
         .nav-links a:hover, .nav-links a.active {
             color: var(--brand-color);
+            border-bottom: 2px solid var(--brand-color);
+            font-weight: 600;
         }
 
         .hero {
@@ -109,7 +113,7 @@
             padding: 0.35rem 0.75rem;
             border-radius: 9999px;
             font-size: 0.85rem;
-            font-weight: 500;
+            font-weight: 600;
             margin-bottom: 1.5rem;
         }
 
@@ -153,31 +157,43 @@
             flex-wrap: wrap;
         }
 
-        .btn {
+        /* Improved CTA Contrast Hierarchy */
+        .btn-primary {
             display: inline-block;
-            background-color: var(--text-color);
+            background-color: var(--brand-color);
             color: #FFFFFF;
             padding: 0.85rem 1.75rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
             transition: all 0.2s ease;
-            border: 1px solid var(--text-color);
+            border: 1px solid var(--brand-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--brand-hover);
+            border-color: var(--brand-hover);
+            transform: translateY(-1px);
         }
 
         .btn-outline {
+            display: inline-block;
             background-color: transparent;
             color: var(--text-color);
+            padding: 0.85rem 1.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
             border: 1px solid var(--border-color);
-        }
-
-        .btn:hover {
-            opacity: 0.9;
+            transition: all 0.2s ease;
         }
 
         .btn-outline:hover {
             border-color: var(--text-color);
+            background-color: #F1F5F9;
         }
 
         section {
@@ -333,12 +349,12 @@
             <h1>Building Evidence-Backed <span>Search Intelligence</span> Systems.</h1>
             <p class="claim">I build leakage-free ML models that identify declining search content and prioritize optimization opportunities across millions of rows of Google Search Console data.</p>
             <div class="cta-group">
-                <a href="case_study.html" class="btn">Read Capstone Case Study</a>
-                <a href="https://cal.com/ahsan-seo" target="_blank" class="btn btn-outline">Book 1:1 Consultation</a>
+                <a href="case_study.html" class="btn-primary">Read Capstone Case Study &rarr;</a>
+                <a href="https://cal.com/ahsan-seo" target="_blank" class="btn-outline">Book 1:1 Consultation</a>
             </div>
         </header>
 
-        <!-- Professional Profiles & Links Bar -->
+        <!-- Professional Links Bar -->
         <div class="links-bar">
             <a href="https://www.linkedin.com/in/ahsan-seo" target="_blank" class="link-item">
                 🌐 LinkedIn Profile
@@ -377,21 +393,29 @@
                     </div>
                 </div>
 
-                <a href="case_study.html" class="btn" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">View Full Case Study &rarr;</a>
+                <a href="case_study.html" class="btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.85rem;">View Full Case Study &rarr;</a>
             </div>
         </section>
 
-        <!-- Space for Future Posts & Capstone Work -->
+        <!-- Technical Competencies -->
         <section>
-            <h2>Future Posts & Research</h2>
+            <h2>Technical Toolkit</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h4>[Upcoming] Model Leakage Traps</h4>
-                    <p>Why post-decision metrics inflate evaluation metrics and how to enforce zero-leakage boundaries.</p>
+                    <h4>DuckDB & Parquet</h4>
+                    <p>Direct HTTP stream queries against Hugging Face dataset releases without heavy downloads.</p>
                 </div>
                 <div class="skill-card">
-                    <h4>[Upcoming] MCP Tooling Architecture</h4>
-                    <p>Connecting LLMs to DuckDB and GitHub repositories via the Model Context Protocol.</p>
+                    <h4>Leakage Prevention</h4>
+                    <p>Strict historical observation window boundaries to eliminate post-decision feature leakage.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Scikit-Learn ML</h4>
+                    <p>Grouped client-holdout cross-validation using Logistic Regression, Random Forest, & HGB.</p>
+                </div>
+                <div class="skill-card">
+                    <h4>Model Context Protocol</h4>
+                    <p>Autonomous AI workflows integrating custom MCP tools and prompt chains.</p>
                 </div>
             </div>
         </section>

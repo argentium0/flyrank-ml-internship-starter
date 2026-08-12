@@ -12,7 +12,8 @@
         :root {
             --bg-color: #F8F9FA;
             --text-color: #1A1D20;
-            --brand-color: #3B82F6;
+            --brand-color: #2563EB;
+            --brand-hover: #1D4ED8;
             --accent-color: #10B981;
             --card-bg: #FFFFFF;
             --border-color: #E5E7EB;
@@ -45,6 +46,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .logo-group {
@@ -79,6 +82,7 @@
         .nav-links {
             display: flex;
             gap: 1.25rem;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
@@ -86,11 +90,14 @@
             color: var(--muted-text);
             font-weight: 500;
             font-size: 0.9rem;
-            transition: color 0.2s;
+            padding-bottom: 0.25rem;
+            transition: all 0.2s;
         }
 
         .nav-links a:hover, .nav-links a.active {
             color: var(--brand-color);
+            border-bottom: 2px solid var(--brand-color);
+            font-weight: 600;
         }
 
         header {
@@ -147,9 +154,12 @@
             font-size: 0.95rem;
         }
 
+        /* Improved Mobile Responsive Table Styling */
         .table-responsive {
             overflow-x: auto;
             margin: 1.25rem 0;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
         }
 
         table {
@@ -157,6 +167,7 @@
             border-collapse: collapse;
             font-size: 0.9rem;
             text-align: left;
+            min-width: 500px; /* Prevents cell squishing on mobile */
         }
 
         th, td {
@@ -210,7 +221,7 @@
             color: #065F46;
         }
 
-        .btn {
+        .btn-primary {
             display: inline-block;
             background-color: var(--brand-color);
             color: #FFFFFF;
@@ -219,11 +230,11 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
-            transition: opacity 0.2s;
+            transition: background-color 0.2s;
         }
 
-        .btn:hover {
-            opacity: 0.9;
+        .btn-primary:hover {
+            background-color: var(--brand-hover);
         }
 
         footer {
@@ -248,6 +259,7 @@
                 <a href="index.html">Home</a>
                 <a href="case_study.html" class="active">Case Study</a>
                 <a href="https://github.com/argentium0/flyrank-ml-internship-starter" target="_blank">GitHub Repo</a>
+                <a href="https://www.linkedin.com/in/ahsan-seo" target="_blank">LinkedIn</a>
             </div>
         </nav>
 
@@ -274,7 +286,7 @@
             </div>
             
             <div class="callout-success">
-                <strong>The Honest Fix:</strong> Removing post-decision features and strictly enforcing historical observation boundaries yielded an honest baseline AUC of <strong>0.6437</strong>.
+                <strong>The Honest Fix:</strong> Removing post-decision features and strictly enforcing historical observation boundaries yielded an honest baseline AUC of <strong>0.6125</strong>.
             </div>
 
             <div class="code-snippet">
@@ -389,7 +401,7 @@ GROUP BY client_hash_id, content_hash_id, c.word_count;
             <h2>Ready to inspect the code?</h2>
             <p>The entire pipeline, notebooks, and outputs are open-source and reproducible.</p>
             <br>
-            <a href="https://github.com/argentium0/flyrank-ml-internship-starter" target="_blank" class="btn">View GitHub Repository</a>
+            <a href="https://github.com/argentium0/flyrank-ml-internship-starter" target="_blank" class="btn-primary">View GitHub Repository</a>
         </section>
 
         <footer>
