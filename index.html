@@ -324,6 +324,52 @@
             display: flex;
             justify-content: space-between;
         }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 0 1rem 2rem 1rem;
+            }
+            nav {
+                margin-bottom: 2rem;
+                justify-content: center;
+                text-align: center;
+            }
+            .nav-links {
+                justify-content: center;
+                gap: 1rem;
+                width: 100%;
+                margin-top: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .hero {
+                margin-bottom: 2.5rem;
+            }
+            .cta-group {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.75rem;
+            }
+            .btn-primary, .btn-outline {
+                width: 100%;
+                text-align: center;
+            }
+            .links-bar {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+                padding: 1rem;
+            }
+            .case-card {
+                padding: 1.5rem;
+            }
+            .case-metrics {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0.75rem;
+            }
+        }
     </style>
 </head>
 <body>
