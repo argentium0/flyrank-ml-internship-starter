@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Intelligence Case Study | Ahsan</title>
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #F8F9FA;
+            --text-color: #1A1D20;
+            --brand-color: #3B82F6;
+            --accent-color: #10B981;
+            --card-bg: #FFFFFF;
+            --border-color: #E5E7EB;
+            --muted-text: #4B5563;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 0 1.5rem 3rem 1.5rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        nav {
+            padding: 1.5rem 0;
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .logo-placeholder {
+            width: 40px;
+            height: 40px;
+            background-color: var(--brand-color);
+            color: #FFFFFF;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .brand-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.25rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--muted-text);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--brand-color);
+        }
+
+        header {
+            margin-bottom: 2.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #E0F2FE;
+            color: #0369A1;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        p.lead {
+            font-size: 1.1rem;
+            color: var(--muted-text);
+        }
+
+        section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #374151;
+            font-size: 0.95rem;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin: 1.25rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #F3F4F6;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        tr:hover {
+            background-color: #F9FAFB;
+        }
+
+        .highlight-row {
+            background-color: #EFF6FF;
+            font-weight: 600;
+        }
+
+        .code-snippet {
+            background-color: #1E293B;
+            color: #F8FAFC;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+
+        .callout-warning {
+            background-color: #FEF2F2;
+            border-left: 4px solid #EF4444;
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #991B1B;
+        }
+
+        .callout-success {
+            background-color: #ECFDF5;
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #065F46;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--brand-color);
+            color: #FFFFFF;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+            font-size: 0.85rem;
+            color: #9CA3AF;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo-group">
+                <div class="logo-placeholder">A</div>
+                <div class="brand-name">AHSAN.SEO</div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="case_study.html" class="active">Case Study</a>
+                <a href="https://github.com/argentium0/flyrank-ml-internship-starter" target="_blank">GitHub Repo</a>
+            </div>
+        </nav>
+
+        <header>
+            <span class="badge">ML-08 Capstone Modeling Lane</span>
+            <h1>Predicting Search Performance Decline Across 79M Daily Rows</h1>
+            <p class="lead">How a leakage-free machine learning workflow outperformed manual SEO heuristics by 36 percentage points on unseen client domains.</p>
+        </header>
+
+        <!-- Section 1 -->
+        <section>
+            <h2>1. Framing & Problem Definition</h2>
+            <p>SEO teams frequently waste editorial resources updating high-volume pages that have zero probability of traffic recovery, while missing mid-volume pages actively decaying in search results. The goal of this project was to build a machine learning model to score and rank content refresh opportunities.</p>
+            <p><strong>Dataset Context:</strong> We analyzed the pseudonymized FlyRank warehouse release (<strong>78.8M daily rows</strong> across 104 client domains), restricting feature development to a mid-panel month partition (<code>month=2026-03</code>) and reserving subsequent months for outcome verification.</p>
+        </section>
+
+        <!-- Section 2 -->
+        <section>
+            <h2>2. Safe Data Contract & Leakage Audit</h2>
+            <p>In search analytics modeling, feature leakage is the #1 reason why models fail in production. We conducted an explicit <strong>Leakage Trap Experiment</strong> to prove our data contract integrity:</p>
+            
+            <div class="callout-warning">
+                <strong>The Leakage Trap:</strong> When future-window metrics (e.g. post-decision April impressions) were included, a Decision Tree classifier achieved an inflated, near-perfect AUC of <strong>1.0000</strong>.
+            </div>
+            
+            <div class="callout-success">
+                <strong>The Honest Fix:</strong> Removing post-decision features and strictly enforcing historical observation boundaries yielded an honest baseline AUC of <strong>0.6437</strong>.
+            </div>
+
+            <div class="code-snippet">
+-- DuckDB Feature Extraction Query (Zero Forward-Looking Leakage)
+SELECT 
+    client_hash_id,
+    content_hash_id,
+    AVG(gsc_avg_position) as avg_position, -- knowable at decision moment
+    (SUM(clicks_90d) / NULLIF(SUM(impressions_90d), 0)) * 100 as ctr,
+    SUM(sessions_90d) as sessions,
+    c.word_count
+FROM fact_daily_march_2026
+JOIN dim_content c ON fact_daily_march_2026.content_hash_id = c.content_hash_id
+GROUP BY client_hash_id, content_hash_id, c.word_count;
+            </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section>
+            <h2>3. Model vs Baseline Comparison</h2>
+            <p>All models were trained on 80% of client domains (25 clients, 23,837 rows) and evaluated on a <strong>Grouped Client Holdout</strong> (7 unseen clients, 6,163 rows) to measure true domain generalizability.</p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Model / Method</th>
+                            <th>AUC-ROC</th>
+                            <th>Precision@50</th>
+                            <th>Precision@100</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Base Rate (Random Choice)</td>
+                            <td>0.5110</td>
+                            <td>0.5110</td>
+                            <td>0.5110</td>
+                        </tr>
+                        <tr>
+                            <td>Week 4 Rule Baseline</td>
+                            <td>N/A (Rule)</td>
+                            <td>0.4200</td>
+                            <td>0.4700</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td>Logistic Regression (Winner)</td>
+                            <td>0.6125</td>
+                            <td>0.7800</td>
+                            <td>0.7800</td>
+                        </tr>
+                        <tr>
+                            <td>Random Forest Classifier</td>
+                            <td>0.5965</td>
+                            <td>0.6200</td>
+                            <td>0.6200</td>
+                        </tr>
+                        <tr>
+                            <td>HistGradientBoosting Classifier</td>
+                            <td>0.5935</td>
+                            <td>0.6600</td>
+                            <td>0.7000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><strong>Key Result:</strong> Logistic Regression delivered the highest ranking precision on unseen clients (<strong>Precision@50 of 0.7800</strong>), beating the random base rate by <strong>+26.9 percentage points</strong> and outperforming the manual rule baseline by <strong>+36.0 percentage points</strong>.</p>
+        </section>
+
+        <!-- Section 4 -->
+        <section>
+            <h2>4. Feature Importance & Diagnostic Interpretation</h2>
+            <p>Permutation importance on holdout test clients revealed the primary physical drivers of content decline:</p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Importance Mean</th>
+                            <th>Interpretation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>log_impressions_90d</code></td>
+                            <td>0.0372</td>
+                            <td>Higher volume pages experience more noticeable impression drops.</td>
+                        </tr>
+                        <tr>
+                            <td><code>avg_position</code></td>
+                            <td>0.0188</td>
+                            <td>Pages outside top-10 positions decay rapidly without updates.</td>
+                        </tr>
+                        <tr>
+                            <td><code>log_clicks_90d</code></td>
+                            <td>0.0154</td>
+                            <td>Historical click volume signals active audience demand.</td>
+                        </tr>
+                        <tr>
+                            <td><code>ctr</code></td>
+                            <td>0.0102</td>
+                            <td>Low CTR relative to position indicates snippet/intent mismatch.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section style="text-align: center;">
+            <h2>Ready to inspect the code?</h2>
+            <p>The entire pipeline, notebooks, and outputs are open-source and reproducible.</p>
+            <br>
+            <a href="https://github.com/argentium0/flyrank-ml-internship-starter" target="_blank" class="btn">View GitHub Repository</a>
+        </section>
+
+        <footer>
+            <div>&copy; 2026 Ahsan</div>
+            <div>Applied Search Intelligence Track</div>
+        </footer>
+    </div>
+</body>
+</html>
