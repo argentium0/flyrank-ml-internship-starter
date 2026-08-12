@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahsan | Search Intelligence & Machine Learning Portfolio</title>
+    <title>Ahsan | Search Intelligence & Machine Learning Engineer</title>
     <!-- Google Fonts: Outfit & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,6 +45,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .logo-group {
@@ -79,6 +81,7 @@
         .nav-links {
             display: flex;
             gap: 1.25rem;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
@@ -147,6 +150,7 @@
         .cta-group {
             display: flex;
             gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -188,18 +192,38 @@
             color: var(--text-color);
         }
 
+        .links-bar {
+            display: flex;
+            gap: 1.5rem;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.25rem;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .link-item:hover {
+            color: var(--brand-color);
+        }
+
         .case-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 2rem;
             box-shadow: 0 2px 4px rgba(0,0,0,0.04);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .case-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
         .case-tag {
@@ -231,6 +255,7 @@
             padding: 1rem;
             background-color: #F9FAFB;
             border-radius: 8px;
+            flex-wrap: wrap;
         }
 
         .metric-item {
@@ -296,25 +321,42 @@
                 <a href="index.html" class="active">Home</a>
                 <a href="case_study.html">Case Study</a>
                 <a href="https://github.com/argentium0/flyrank-ml-internship-starter" target="_blank">GitHub Repo</a>
+                <a href="https://www.linkedin.com/in/ahsan-seo" target="_blank">LinkedIn</a>
             </div>
         </nav>
 
         <header class="hero">
             <div class="status-badge">
                 <span class="status-dot"></span>
-                Portfolio Live | FlyRank Internship
+                FlyRank Internship | Applied Search Intelligence
             </div>
             <h1>Building Evidence-Backed <span>Search Intelligence</span> Systems.</h1>
             <p class="claim">I build leakage-free ML models that identify declining search content and prioritize optimization opportunities across millions of rows of Google Search Console data.</p>
             <div class="cta-group">
                 <a href="case_study.html" class="btn">Read Capstone Case Study</a>
-                <a href="https://github.com/argentium0/flyrank-ml-internship-starter" target="_blank" class="btn btn-outline">Explore Code</a>
+                <a href="https://cal.com/ahsan-seo" target="_blank" class="btn btn-outline">Book 1:1 Consultation</a>
             </div>
         </header>
 
-        <!-- Lead Case Study Section -->
+        <!-- Professional Profiles & Links Bar -->
+        <div class="links-bar">
+            <a href="https://www.linkedin.com/in/ahsan-seo" target="_blank" class="link-item">
+                🌐 LinkedIn Profile
+            </a>
+            <a href="https://github.com/argentium0" target="_blank" class="link-item">
+                💻 GitHub Profile
+            </a>
+            <a href="https://github.com/argentium0/flyrank-ml-internship-starter/blob/main/docs/resume.pdf" target="_blank" class="link-item">
+                📄 Download CV
+            </a>
+            <a href="https://cal.com/ahsan-seo" target="_blank" class="link-item">
+                📅 Booking Link
+            </a>
+        </div>
+
+        <!-- Featured Case Study -->
         <section>
-            <h2>Featured Search Intelligence Work</h2>
+            <h2>Featured Capstone Work</h2>
             <div class="case-card">
                 <div class="case-tag">Core Case Study</div>
                 <h3>Search Performance Decline Predictor</h3>
@@ -339,25 +381,17 @@
             </div>
         </section>
 
-        <!-- Technical Competencies -->
+        <!-- Space for Future Posts & Capstone Work -->
         <section>
-            <h2>Technical Toolkit</h2>
+            <h2>Future Posts & Research</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h4>DuckDB & Parquet</h4>
-                    <p>Direct HTTP stream queries against Hugging Face dataset releases without heavy downloads.</p>
+                    <h4>[Upcoming] Model Leakage Traps</h4>
+                    <p>Why post-decision metrics inflate evaluation metrics and how to enforce zero-leakage boundaries.</p>
                 </div>
                 <div class="skill-card">
-                    <h4>Leakage Prevention</h4>
-                    <p>Strict historical observation window boundaries to eliminate post-decision feature leakage.</p>
-                </div>
-                <div class="skill-card">
-                    <h4>Scikit-Learn ML</h4>
-                    <p>Grouped client-holdout cross-validation using Logistic Regression, Random Forest, & HGB.</p>
-                </div>
-                <div class="skill-card">
-                    <h4>Model Context Protocol</h4>
-                    <p>Autonomous AI workflows integrating custom MCP tools and prompt chains.</p>
+                    <h4>[Upcoming] MCP Tooling Architecture</h4>
+                    <p>Connecting LLMs to DuckDB and GitHub repositories via the Model Context Protocol.</p>
                 </div>
             </div>
         </section>
