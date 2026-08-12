@@ -1,6 +1,1 @@
-{
-    "auc_roc": 0.6125,
-    "precision_at_50": 0.78,
-    "precision_at_100": 0.78,
-    "base_rate": 0.511
-}
+{"auc_roc": 0.6125, "precision_at_50": 0.78, "precision_at_100": 0.78, "base_rate": 0.511}

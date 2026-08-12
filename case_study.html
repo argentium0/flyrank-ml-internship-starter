@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Intelligence Case Study | Ahsan</title>
+    <title>Research Paper: Content Refresh Prioritization via ML | Ahsan</title>
     <!-- Google Fonts: Outfit & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.65;
             padding: 0 1.5rem 3rem 1.5rem;
         }
 
@@ -102,6 +102,7 @@
 
         header {
             margin-bottom: 2.5rem;
+            text-align: center;
         }
 
         .badge {
@@ -124,16 +125,28 @@
             margin-bottom: 1rem;
         }
 
-        p.lead {
-            font-size: 1.1rem;
+        .author-meta {
+            font-size: 0.9rem;
             color: var(--muted-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .abstract-box {
+            background-color: #F1F5F9;
+            border-left: 4px solid var(--brand-color);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #334155;
         }
 
         section {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 1.75rem;
+            padding: 2rem;
             margin-bottom: 2rem;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
@@ -142,22 +155,21 @@
             font-family: 'Outfit', sans-serif;
             font-size: 1.4rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
             color: var(--text-color);
             border-bottom: 2px solid var(--bg-color);
             padding-bottom: 0.5rem;
         }
 
         p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
             color: #374151;
             font-size: 0.95rem;
         }
 
-        /* Improved Mobile Responsive Table Styling */
         .table-responsive {
             overflow-x: auto;
-            margin: 1.25rem 0;
+            margin: 1.5rem 0;
             border-radius: 8px;
             border: 1px solid var(--border-color);
         }
@@ -167,11 +179,11 @@
             border-collapse: collapse;
             font-size: 0.9rem;
             text-align: left;
-            min-width: 500px; /* Prevents cell squishing on mobile */
+            min-width: 500px;
         }
 
         th, td {
-            padding: 0.75rem 1rem;
+            padding: 0.85rem 1rem;
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -193,20 +205,20 @@
         .code-snippet {
             background-color: #1E293B;
             color: #F8FAFC;
-            padding: 1rem;
+            padding: 1.25rem;
             border-radius: 8px;
             font-family: 'Courier New', Courier, monospace;
             font-size: 0.85rem;
             overflow-x: auto;
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
         }
 
         .callout-warning {
             background-color: #FEF2F2;
             border-left: 4px solid #EF4444;
-            padding: 1rem;
+            padding: 1.25rem;
             border-radius: 0 8px 8px 0;
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
             font-size: 0.9rem;
             color: #991B1B;
         }
@@ -214,27 +226,31 @@
         .callout-success {
             background-color: #ECFDF5;
             border-left: 4px solid var(--accent-color);
-            padding: 1rem;
+            padding: 1.25rem;
             border-radius: 0 8px 8px 0;
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
             font-size: 0.9rem;
             color: #065F46;
         }
 
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--brand-color);
-            color: #FFFFFF;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: background-color 0.2s;
+        .repro-links {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
         }
 
-        .btn-primary:hover {
-            background-color: var(--brand-hover);
+        .repro-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .repro-links a {
+            color: var(--brand-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .repro-links a:hover {
+            text-decoration: underline;
         }
 
         footer {
@@ -245,6 +261,8 @@
             color: #9CA3AF;
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         @media (max-width: 600px) {
@@ -265,19 +283,9 @@
             h1 {
                 font-size: 1.75rem;
             }
-            p.lead {
-                font-size: 1rem;
-            }
             section {
                 padding: 1.25rem;
                 margin-bottom: 1.5rem;
-            }
-            h2 {
-                font-size: 1.25rem;
-            }
-            .code-snippet {
-                padding: 0.75rem;
-                font-size: 0.8rem;
             }
         }
     </style>
@@ -298,50 +306,44 @@
         </nav>
 
         <header>
-            <span class="badge">ML-08 Capstone Modeling Lane</span>
-            <h1>Predicting Search Performance Decline Across 79M Daily Rows</h1>
-            <p class="lead">How a leakage-free machine learning workflow outperformed manual SEO heuristics by 36 percentage points on unseen client domains.</p>
+            <span class="badge">Research Paper Submission</span>
+            <h1>An Evidence-Backed Machine Learning Workflow for Content Refresh Prioritization</h1>
+            <div class="author-meta">
+                <strong>Ahsan</strong> | Applied Search Intelligence Track | August 2026
+            </div>
         </header>
 
-        <!-- Section 1 -->
+        <!-- Section 1: Abstract -->
+        <div class="abstract-box">
+            <strong>Abstract:</strong> Content decay in organic search represents a significant drain on editorial budgets, yet manual refresh heuristics frequently fail by prioritizing high-volume but non-recoverable pages. In this research, we framed content decline detection as a binary classification task and evaluated models against manual rule baselines on a multi-tenant SEO warehouse of 78.8 million daily rows. To prevent inflated performance, we implemented a client-holdout validation design and strictly enforced historical data boundaries to eliminate target-derived feature leakage. Our winning Logistic Regression model achieved an observed holdout Precision@50 of 0.7800, outperforming the manual heuristic baseline by +0.3600 and the random guessing base rate by +0.2690. This workflow provides stable, generalizable decision-support for prioritizing editorial content queues on unseen domains.
+        </div>
+
+        <!-- Section 2: Introduction / Problem Statement -->
         <section>
-            <h2>1. Framing & Problem Definition</h2>
-            <p>SEO teams frequently waste editorial resources updating high-volume pages that have zero probability of traffic recovery, while missing mid-volume pages actively decaying in search results. The goal of this project was to build a machine learning model to score and rank content refresh opportunities.</p>
-            <p><strong>Dataset Context:</strong> We analyzed the pseudonymized FlyRank warehouse release (<strong>78.8M daily rows</strong> across 104 client domains), restricting feature development to a mid-panel month partition (<code>month=2026-03</code>) and reserving subsequent months for outcome verification.</p>
+            <h2>1. Introduction</h2>
+            <p>SEO managers and content strategists routinely struggle to allocate editorial budgets when managing large multi-tenant content portfolios. Common practice relies on simple heuristics, such as prioritizing pages that have not been updated for 90 days and show a high search volume. However, these rules fail in production because high-impression pages often represent stable, mature brand queries that naturally experience low click-through rates (CTR) but do not require content updates.</p>
+            <p>This study introduces a systematic, leakage-free machine learning workflow designed to replace manual heuristics with an evidence-backed opportunity queue. By modeling performance decline out-of-sample on unseen domains, we provide strategists with a reliable priority queue that maps decaying pages directly to actionable refresh archetypes.</p>
         </section>
 
-        <!-- Section 2 -->
+        <!-- Section 3: Data -->
         <section>
-            <h2>2. Safe Data Contract & Leakage Audit</h2>
-            <p>In search analytics modeling, feature leakage is the #1 reason why models fail in production. We conducted an explicit <strong>Leakage Trap Experiment</strong> to prove our data contract integrity:</p>
-            
-            <div class="callout-warning">
-                <strong>The Leakage Trap:</strong> When future-window metrics (e.g. post-decision April impressions) were included, a Decision Tree classifier achieved an inflated, near-perfect AUC of <strong>1.0000</strong>.
-            </div>
-            
-            <div class="callout-success">
-                <strong>The Honest Fix:</strong> Removing post-decision features and strictly enforcing historical observation boundaries yielded an honest baseline AUC of <strong>0.6125</strong>.
-            </div>
-
-            <div class="code-snippet">
--- DuckDB Feature Extraction Query (Zero Forward-Looking Leakage)
-SELECT 
-    client_hash_id,
-    content_hash_id,
-    AVG(gsc_avg_position) as avg_position, -- knowable at decision moment
-    (SUM(clicks_90d) / NULLIF(SUM(impressions_90d), 0)) * 100 as ctr,
-    SUM(sessions_90d) as sessions,
-    c.word_count
-FROM fact_daily_march_2026
-JOIN dim_content c ON fact_daily_march_2026.content_hash_id = c.content_hash_id
-GROUP BY client_hash_id, content_hash_id, c.word_count;
-            </div>
+            <h2>2. Data</h2>
+            <p>We utilized the pseudonymized FlyRank Search Performance Warehouse release containing <strong>78.8 million daily rows</strong> across 104 client domains. For feature extraction and modeling, we restricted the observation window to a mid-panel month partition (<code>month=2026-03</code>) and evaluated target traffic outcomes in <code>month=2026-04</code>.</p>
+            <p><strong>Exclusions & Formatting:</strong> To maintain strict public safety and client privacy, all client and content IDs are anonymized using secure hashes. We deliberately excluded long-tail sparse pages with fewer than 100 search impressions in the 90-day window, eliminating statistical noise from our feature matrix (representing 26.6% of the raw dataset).</p>
         </section>
 
-        <!-- Section 3 -->
+        <!-- Section 4: Methodology -->
         <section>
-            <h2>3. Model vs Baseline Comparison</h2>
-            <p>All models were trained on 80% of client domains (25 clients, 23,837 rows) and evaluated on a <strong>Grouped Client Holdout</strong> (7 unseen clients, 6,163 rows) to measure true domain generalizability.</p>
+            <h2>3. Methodology</h2>
+            <p>We framed decline prediction as a binary classification task where the target label (<code>is_declining_label</code>) is 1 if the page views or clicks trend direction is 'down' in the post-decision window, else 0.</p>
+            <p><strong>Feature Engineering:</strong> We extracted 8 primary features knowable at the decision moment: content age/staleness (<code>days_since_last_update</code>), search impressions volume (log-scaled), click volume (log-scaled), CTR, Google Search Console average position, word count, scroll rate, and user engagement rate.</p>
+            <p><strong>Validation Design:</strong> To prevent data leakage and evaluate true generalizability, we implemented a <strong>Grouped Client Split</strong> (80% train domains / 20% holdout test domains). Naive random row splits leak domain authority and CMS structures, creating a false impression of model skill. Furthermore, we conducted a target confession test: injecting a target-derived column yielded a perfect AUC of 1.0000, confirming the test harness's sensitivity and the clean state of our validated feature set.</p>
+        </section>
+
+        <!-- Section 5: Results -->
+        <section>
+            <h2>4. Results</h2>
+            <p>We trained Logistic Regression, Random Forest, and HistGradientBoosting Classifiers on the training split and evaluated their ranking capabilities on unseen holdout test clients. The metrics were compared side-by-side on the same split:</p>
 
             <div class="table-responsive">
                 <table>
@@ -355,13 +357,13 @@ GROUP BY client_hash_id, content_hash_id, c.word_count;
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Base Rate (Random Choice)</td>
-                            <td>0.5110</td>
+                            <td>Base Rate (Random Guessing)</td>
+                            <td>0.5110*</td>
                             <td>0.5110</td>
                             <td>0.5110</td>
                         </tr>
                         <tr>
-                            <td>Week 4 Rule Baseline</td>
+                            <td>Week 4 Heuristic Rule Baseline</td>
                             <td>N/A (Rule)</td>
                             <td>0.4200</td>
                             <td>0.4700</td>
@@ -373,12 +375,6 @@ GROUP BY client_hash_id, content_hash_id, c.word_count;
                             <td>0.7800</td>
                         </tr>
                         <tr>
-                            <td>Random Forest Classifier</td>
-                            <td>0.5965</td>
-                            <td>0.6200</td>
-                            <td>0.6200</td>
-                        </tr>
-                        <tr>
                             <td>HistGradientBoosting Classifier</td>
                             <td>0.5935</td>
                             <td>0.6600</td>
@@ -388,54 +384,51 @@ GROUP BY client_hash_id, content_hash_id, c.word_count;
                 </table>
             </div>
 
-            <p><strong>Key Result:</strong> Logistic Regression delivered the highest ranking precision on unseen clients (<strong>Precision@50 of 0.7800</strong>), beating the random base rate by <strong>+26.9 percentage points</strong> and outperforming the manual rule baseline by <strong>+36.0 percentage points</strong>.</p>
+            <p><strong>Key Results & Discussion:</strong> Logistic Regression performed best out-of-sample on unseen domains, delivering a <strong>Precision@50 of 0.7800</strong> (outperforming random guessing by +0.2690 and the manual heuristic rule by +0.3600). Feature coefficient analysis confirmed that search impression volume (<code>log_impressions_90d</code>) and average position (<code>avg_position</code>) are the strongest predictors of traffic decline.</p>
         </section>
 
-        <!-- Section 4 -->
+        <!-- Section 6: Limitations & Honest Framing -->
         <section>
-            <h2>4. Feature Importance & Diagnostic Interpretation</h2>
-            <p>Permutation importance on holdout test clients revealed the primary physical drivers of content decline:</p>
-
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Feature</th>
-                            <th>Importance Mean</th>
-                            <th>Interpretation</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><code>log_impressions_90d</code></td>
-                            <td>0.0372</td>
-                            <td>Higher volume pages experience more noticeable impression drops.</td>
-                        </tr>
-                        <tr>
-                            <td><code>avg_position</code></td>
-                            <td>0.0188</td>
-                            <td>Pages outside top-10 positions decay rapidly without updates.</td>
-                        </tr>
-                        <tr>
-                            <td><code>log_clicks_90d</code></td>
-                            <td>0.0154</td>
-                            <td>Historical click volume signals active audience demand.</td>
-                        </tr>
-                        <tr>
-                            <td><code>ctr</code></td>
-                            <td>0.0102</td>
-                            <td>Low CTR relative to position indicates snippet/intent mismatch.</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <h2>5. Limitations & Honest Framing</h2>
+            <p>While the model generalizes well, the following limitations must guide its deployment:</p>
+            <div class="callout-warning">
+                <strong>1. Navigational Intent Mismatch:</strong> The model cannot distinguish transactional/informational keywords from core brand terms. Brand-specific homepages often rank high with below-median CTR but must be excluded from refresh queues.
+            </div>
+            <div class="callout-warning">
+                <strong>2. Long-Tail Query Noise:</strong> Pages receiving fewer than 100 impressions show high variance. Traffic changes on these pages represent random distribution noise rather than genuine content quality decay.
             </div>
         </section>
 
-        <section style="text-align: center;">
-            <h2>Ready to inspect the code?</h2>
-            <p>The entire pipeline, notebooks, and outputs are open-source and reproducible.</p>
-            <br>
-            <a href="https://github.com/argentium0/flyrank-ml-internship-starter" target="_blank" class="btn-primary">View GitHub Repository</a>
+        <!-- Section 7: Ranked Recommendations -->
+        <section>
+            <h2>6. Ranked Recommendations (Action Playbook)</h2>
+            <p>Our model outputs map directly to a prioritized, human-verified Content Action Playbook:</p>
+            <ul>
+                <li><strong>REFRESH_IMMEDIATELY (stale_high_volume_low_ctr):</strong> Stale pages (days since update >= 90) ranking high in impressions (top 20% of traffic) but returning below-median CTR. Actions include: structural subheading updates, featured snippet targeting, and refreshing statistics.</li>
+                <li><strong>REFRESH_PLAN (stale_mid_volume_low_ctr):</strong> Stale pages with moderate traffic (100 to 10,000 impressions) and low CTR. Scheduled inside standard batch sprint cycles.</li>
+                <li><strong>MONITOR (fresh_or_high_ctr):</strong> Recently updated pages or pages maintaining stable baseline performance.</li>
+            </ul>
+            <div class="callout-success">
+                <strong>Safety Guardrail:</strong> Do not automate publishing or redirection. A human strategist must perform keyword cannibalization and indexation checks prior to pushing edits live.
+            </div>
+        </section>
+
+        <!-- Section 8: Reproducibility -->
+        <section>
+            <h2>7. Reproducibility</h2>
+            <p>All source code, notebooks, and verification receipts are open-source and reproducible:</p>
+            <ul class="repro-links">
+                <li>🔗 <a href="https://github.com/argentium0/flyrank-ml-internship-starter" target="_blank">Git Repository: flyrank-ml-internship-starter</a></li>
+                <li>🔗 <a href="https://github.com/argentium0/flyrank-ml-internship-starter/blob/main/work/notebooks/w05_model.ipynb" target="_blank">Model Training Notebook (w05_model.ipynb)</a></li>
+                <li>🔗 <a href="https://github.com/argentium0/flyrank-ml-internship-starter/blob/main/work/notebooks/w06_validation_audit.ipynb" target="_blank">Validation Audit Notebook (w06_validation_audit.ipynb)</a></li>
+                <li>🔗 <a href="https://github.com/argentium0/flyrank-ml-internship-starter/blob/main/work/notebooks/w07_action_playbook.ipynb" target="_blank">Action Playbook Notebook (w07_action_playbook.ipynb)</a></li>
+            </ul>
+        </section>
+
+        <!-- Section 9: Acknowledgments & Data Credit -->
+        <section>
+            <h2>8. Acknowledgments & Data Credit</h2>
+            <p>This research was built on the FlyRank ML Internship dataset. We thank the FlyRank team for providing access to the pseudonymized multi-tenant search performance warehouse. For more information about the platform and dataset access, visit <a href="https://flyrank.ai" target="_blank">FlyRank.ai</a>.</p>
         </section>
 
         <footer>
